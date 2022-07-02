@@ -3,8 +3,8 @@
 %bcond_without	python		# CPython 3.x module and tpm2_ptool
 %bcond_with	tests		# unit/integration tests
 
-Summary:	OSS implementation of the TCG TPM2 Software Stack (TSS2)
-Summary(pl.UTF-8):	Mająca otwarte źródła implementacja TCG TPM2 Software Stack (TSS2)
+Summary:	PKCS#11 interface for TPM2 hardware
+Summary(pl.UTF-8):	Interfejs PKCS#11 do układów TPM2
 Name:		tpm2-pkcs11
 Version:	1.8.0
 Release:	1
@@ -50,28 +50,32 @@ BuildRequires:	tpm2-abrmd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Implementation of the Trusted Computing Group's (TCG) TPM2 Software
-Stack (TSS).
+PKCS#11 is a Public-Key Cryptography Standard that defines a standard
+method to access cryptographic services from tokens/devices such as
+hardware security modules (HSM), smart cards, etc. This project is
+intended to use a TPM2 device as the cryptographic token.
 
 %description -l pl.UTF-8
-Implementacja specyfikacji TPM2 Software Stack (TSS), stworzonej przez
-Trusted Computing Group (TCG).
+PKCS#11 (Public-Key Cryptography Standard #11) to standard
+kryptograficzny klucza publicznego, definiujący standardowy sposób
+dostępu do usług kryptograficznych tokenów/urządzeń takich jak
+sprzętowe moduły bezpieczeństwa (HSM, Hardware Security Modules),
+kart procesorowych itp. Ten projekt ma na celu używanie układów TPM2
+jako tokenów kryptograficznych.
 
 %package devel
-Summary:	Header files for tpm2-pkcs11
-Summary(pl.UTF-8):	Pliki nagłówkowe do tpm2-pkcs11
+Summary:	Header files for tpm2-pkcs11 library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki tpm2-pkcs11
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	openssl-devel
 Requires:	tpm2-tss-devel
 
 %description devel
-Header files for implementation of the Trusted Computing Group's (TCG)
-TPM2 Software Stack (TSS).
+Header files for PKCS#11 interface for TPM2 hardware.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe implementacji Trusted Computing Group (TCG) TPM2
-Software Stack (TSS).
+Pliki nagłówkowe interfejsu PKCS#11 do układów TPM2.
 
 %package -n python3-tpm2-pkcs11
 Summary:	Command line tools for the TPM2.0 PKCS11 module
