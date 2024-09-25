@@ -6,14 +6,13 @@
 Summary:	PKCS#11 interface for TPM2 hardware
 Summary(pl.UTF-8):	Interfejs PKCS#11 do układów TPM2
 Name:		tpm2-pkcs11
-Version:	1.9.0
+Version:	1.9.1
 Release:	1
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/tpm2-software/tpm2-pkcs11/releases
 Source0:	https://github.com/tpm2-software/tpm2-pkcs11/releases/download/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	94cc9e2795b7781f54e4a90480b4b868
-Patch0:		%{name}-ac.patch
+# Source0-md5:	4a87263887b692b83204c18e7608302c
 URL:		https://github.com/tpm2-software/tpm2-pkcs11
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -93,7 +92,6 @@ przechowywanych przez bibliotekę kryptograficzną tpm2-pkcs11.
 
 %prep
 %setup -q
-%patch0 -p1
 
 # set VERSION properly when there is no .git directory
 %{__sed} -i -e 's/m4_esyscmd_s(\[git describe --tags --always --dirty\])/%{version}/' configure.ac
