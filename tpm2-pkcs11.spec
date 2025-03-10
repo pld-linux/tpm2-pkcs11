@@ -7,7 +7,7 @@ Summary:	PKCS#11 interface for TPM2 hardware
 Summary(pl.UTF-8):	Interfejs PKCS#11 do układów TPM2
 Name:		tpm2-pkcs11
 Version:	1.9.1
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries
 #Source0Download: https://github.com/tpm2-software/tpm2-pkcs11/releases
